@@ -22,10 +22,10 @@ def whatfill(value):
         return BOTH
 
         #cor, side, width, height, fill, expand, borderwidth, relief, highlightbackground, highlightthickness
-params = ['#fff', LEFT, 0, None, None, False, 0, 'raised', None, 0]
-class renderKey:
-    def __init__(self, tk, *, args=None, kwargs=None):
-        self.tk =tk
+params = ['#fff', TOP, 0, None, None, False, 0, 'raised', None, 0]
+class renderview:
+    def __init__(self, id, *, args=None, kwargs=None):
+        self.id = id
         self.value = args if args != None else kwargs
         if type(self.value) is str:
             pass
@@ -55,7 +55,9 @@ class renderKey:
         else:
             pass
     
-    def __repr__(self) -> str:
-        frame = Frame(self.tk, bg=params[0], width=params[2], height=params[3], highlightbackground=params[8], highlightthickness=params[9], borderwidth=params[6], relief=params[7])
-        frame.pack(side=params[1], expand=params[5] ,fill=params[4])        
+    def __repr__(self):
+        frame = Frame(self.id, bg=params[0], width=params[2], height=params[3], highlightbackground=params[8], highlightthickness=params[9], borderwidth=params[6], relief=params[7])
+        frame.pack(side=params[1], expand=params[5] ,fill=params[4])    
+        #frame.grid()
+        #frame.Place()    #montar essas opções tbm  
         return f'{frame}'

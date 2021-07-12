@@ -1,4 +1,17 @@
 from gb import window
+from style import styleMain
+
+mainS = styleMain.create({
+    'janela':{
+        'side':'left',
+        'width': 300,
+        'height': 100,
+        'fill': 'both',
+        'expand': False,
+        'borderwidth': 2,
+        'relief': 'ridge',
+        }
+    })
 
 if __name__ == '__main__':
     win = window()
@@ -14,6 +27,7 @@ if __name__ == '__main__':
                 'borderwidth': 2,
                 'relief': 'ridge',
                 }
+            
         }
-    })
+    }, styleMain=mainS)
     win.App()
