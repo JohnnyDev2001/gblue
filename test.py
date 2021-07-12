@@ -1,7 +1,7 @@
 from gb import window
-from style import styleMain
+from style import StyleMain, StyleSheet
 
-mainS = styleMain.create({
+mainS = StyleMain.create({
     'janela':{
         'side':'left',
         'width': 300,
@@ -13,21 +13,24 @@ mainS = styleMain.create({
         }
     })
 
+styles = StyleSheet.create({
+    'view':{
+        'cor':'#0066ff',
+        'side':'left',
+        'width': 100,
+        'height': 100,
+        'fill': 'both',
+        'expand': False,
+        'borderwidth': 2,
+        'relief': 'ridge',
+    }
+})
+
 if __name__ == '__main__':
     win = window()
     win.render({
         'janela':{
-            'View':{
-                'cor':'#0066ff',
-                'side':'left',
-                'width': 100,
-                'height': 100,
-                'fill': 'both',
-                'expand': False,
-                'borderwidth': 2,
-                'relief': 'ridge',
-                }
-            
+            'View': f'{styles["view"]}'
         }
     }, styleMain=mainS)
     win.App()

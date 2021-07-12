@@ -1,12 +1,12 @@
-class styleMain:
+class StyleMain:
     def create(arg=None):
         if type(arg) == dict:
             return arg
         else:
-            return 'Erro'  
+            return 'Erro'
 
-class styleArgs:
-    def create(arg=None):
+class StyleSheet:
+    def create(arg):
         if type(arg) == dict:
             return arg
         else:

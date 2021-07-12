@@ -1,7 +1,7 @@
 from tkinter import *
 
-
-params = []
+#txt
+params = ['']
 class renderlegend:
     def __init__(self, tk, *, args=None, kwargs=None):
         self.tk =tk
@@ -10,10 +10,11 @@ class renderlegend:
             pass
         elif type(self.value) is dict:
             for key, value in self.value.items():
-                if key == 'cor':
+                if key == 'text':
                     params[0] = value
 
 
     def __repr__(self):
-        
-        return f''
+        legend = Label(self, text=params[0])
+        legend.pack()
+        return f'{legend}'
